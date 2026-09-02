@@ -72,32 +72,32 @@ export default function PresenceWidget() {
   const getColors = (type) => {
     const colors = {
       spotify: {
-        bg: "from-green-500/15 to-emerald-500/10",
-        border: "border-green-500/30",
-        text: "text-green-400",
-        badge: "bg-green-500/20 border-green-400/40",
-        glow: "shadow-green-500/20"
+        bg: "from-gray-400/15 to-gray-400/10",
+        border: "border-gray-400/30",
+        text: "text-gray-300",
+        badge: "bg-gray-400/20 border-gray-300/40",
+        glow: "shadow-gray-400/20"
       },
       coding: {
-        bg: "from-blue-500/15 to-indigo-500/10",
-        border: "border-blue-500/30",
-        text: "text-blue-400",
-        badge: "bg-blue-500/20 border-blue-400/40",
-        glow: "shadow-blue-500/20"
+        bg: "from-gray-400/15 to-gray-400/10",
+        border: "border-gray-400/30",
+        text: "text-gray-300",
+        badge: "bg-gray-400/20 border-gray-300/40",
+        glow: "shadow-gray-400/20"
       },
       gaming: {
-        bg: "from-red-500/15 to-pink-500/10",
-        border: "border-red-500/30",
-        text: "text-red-400",
-        badge: "bg-red-500/20 border-red-400/40",
-        glow: "shadow-red-500/20"
+        bg: "from-gray-400/15 to-gray-400/10",
+        border: "border-gray-400/30",
+        text: "text-gray-300",
+        badge: "bg-gray-400/20 border-gray-300/40",
+        glow: "shadow-gray-400/20"
       },
       default: {
-        bg: "from-purple-500/15 to-violet-500/10",
-        border: "border-purple-500/30",
-        text: "text-purple-400",
-        badge: "bg-purple-500/20 border-purple-400/40",
-        glow: "shadow-purple-500/20"
+        bg: "from-gray-400/15 to-gray-400/10",
+        border: "border-gray-400/30",
+        text: "text-gray-300",
+        badge: "bg-gray-400/20 border-gray-300/40",
+        glow: "shadow-gray-400/20"
       }
     };
     return colors[type] || colors.default;
@@ -153,7 +153,7 @@ export default function PresenceWidget() {
                     
                     {/* Music bars - hanya Spotify */}
                     {act.type === "spotify" && (
-                      <div className="absolute -bottom-0.5 -right-0.5 bg-green-500 rounded p-0.5 shadow-lg">
+                      <div className="absolute -bottom-0.5 -right-0.5 bg-gray-400 rounded p-0.5 shadow-lg">
                         <div className="flex items-end gap-0.5 h-2">
                           <div className="w-0.5 bg-white rounded-full animate-music-1"></div>
                           <div className="w-0.5 bg-white rounded-full animate-music-2"></div>

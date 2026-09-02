@@ -185,3 +185,103 @@ body {
 	user-select: none;
 	cursor: default;
   } */
+/* ===== Theme tokens ===== */
+:root,
+[data-theme="dark"] {
+	--page: #030014;
+	--surface: #0a0a1a;
+	--card: #0d0d22;
+	--ink: #ffffff;
+	--ink-soft: #d4d4d8;
+	--muted: #9ca3af;
+	--faint: #71717a;
+	--line: rgba(255, 255, 255, 0.1);
+	--line-strong: rgba(255, 255, 255, 0.18);
+	--grad1: #d4d4d8;
+	--grad2: #fafafa;
+	--accent: #f59e0b;
+	color-scheme: dark;
+}
+
+[data-theme="light"] {
+	--page: #f4f1ec;
+	--surface: #ffffff;
+	--card: #ffffff;
+	--ink: #18181b;
+	--ink-soft: #3f3f46;
+	--muted: #71717a;
+	--faint: #a1a1aa;
+	--line: rgba(0, 0, 0, 0.12);
+	--line-strong: rgba(0, 0, 0, 0.2);
+	--grad1: #52525b;
+	--grad2: #18181b;
+	--accent: #b45309;
+	color-scheme: light;
+}
+
+html {
+	background: var(--page);
+}
+body {
+	background: var(--page);
+	color: var(--ink);
+}
+
+/* ===== Theme-aware text overrides for public pages ===== */
+.themed .text-white,
+.themed .text-gray-100,
+.themed .text-gray-200,
+.themed .text-[#fafafa] {
+	color: var(--ink);
+}
+.themed .text-gray-300 {
+	color: var(--ink-soft);
+}
+.themed .text-gray-400,
+.themed .text-gray-500 {
+	color: var(--muted);
+}
+.themed .text-[#d4d4d8] {
+	color: var(--ink-soft);
+}
+.themed .text-[#9ca3af] {
+	color: var(--muted);
+}
+.themed .text-[#a1a1aa] {
+	color: var(--muted);
+}
+
+.themed .border-white {
+	border-color: var(--line-strong);
+}
+.themed .border-white\/10,
+.themed .border-white\/15,
+.themed .border-white\/20,
+.themed .border-white\/5,
+.themed .border-white\/8,
+.themed .border-white\/12 {
+	border-color: var(--line);
+}
+
+.themed .bg-white\/5,
+.themed .bg-white\/4,
+.themed .bg-white\/7,
+.themed .bg-white\/8,
+.themed .bg-white\/10 {
+	background-color: color-mix(in srgb, var(--ink) 5%, transparent);
+}
+.themed .text-gray-800,
+.themed .text-gray-700 {
+	color: var(--ink);
+}
+.themed .text-gray-600 {
+	color: var(--muted);
+}
+.themed .bg-gray-400,
+.themed .bg-gray-500 {
+	background-color: var(--faint);
+}
+.themed .placeholder-gray-500::placeholder,
+.themed .placeholder-gray-600::placeholder {
+	color: var(--muted);
+}

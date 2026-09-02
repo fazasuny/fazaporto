@@ -33,14 +33,17 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
       {!showWelcome && (
         <>
           <Navbar />
-      
-          <Home />
-          <About />
-          <Suspense fallback={<div className="h-20" />}>
-            <Portofolio />
-            <ContactPage />
-          </Suspense>
-          <Footer />
+          <main className="themed">
+            <Home />
+            <About />
+            <Suspense fallback={<div className="h-20" />}>
+              <Portofolio />
+              <ContactPage />
+            </Suspense>
+          </main>
+          <footer className="themed">
+            <Footer />
+          </footer>
         </>
       )}
     </>
@@ -48,12 +51,12 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
 };
 
 const ProjectPageLayout = () => (
-  <>
+  <main className="themed">
     <Suspense fallback={<div className="min-h-screen" />}>
       <ProjectDetails />
     </Suspense>
     <Footer />
-  </>
+  </main>
 );
 
 function App() {

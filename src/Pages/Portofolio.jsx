@@ -66,7 +66,7 @@ const ToggleButton = ({ onClick, isShowingMore }) => (
         <polyline points={isShowingMore ? "18 15 12 9 6 15" : "6 9 12 15 18 9"}></polyline>
       </svg>
     </span>
-    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-500/50 transition-all duration-300 group-hover:w-full"></span>
+    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-400/50 transition-all duration-300 group-hover:w-full"></span>
   </button>
 );
 
@@ -104,18 +104,27 @@ function a11yProps(index) {
 
 // techStacks tetap sama
 const techStacks = [
-  { icon: "html.svg", language: "HTML" },
-  { icon: "css.svg", language: "CSS" },
+  { icon: "googlecloud.svg", language: "Google Cloud" },
+  { icon: "linux.svg", language: "Linux" },
+  { icon: "docker.svg", language: "Docker" },
+  { icon: "python.svg", language: "Python" },
+  { icon: "fastapi.svg", language: "FastAPI" },
+  { icon: "postgresql.svg", language: "PostgreSQL" },
+  { icon: "supabase.svg", language: "Supabase" },
+  { icon: "reactjs.svg", language: "React" },
   { icon: "javascript.svg", language: "JavaScript" },
-  { icon: "tailwind.svg", language: "Tailwind CSS" },
-  { icon: "reactjs.svg", language: "ReactJS" },
-  { icon: "vite.svg", language: "Vite" },
-  { icon: "nodejs.svg", language: "Node JS" },
-  { icon: "bootstrap.svg", language: "Bootstrap" },
+  { icon: "restapi.svg", language: "REST API" },
+  { icon: "scikitlearn.svg", language: "Scikit-learn" },
+  { icon: "pandas.svg", language: "Pandas" },
+  { icon: "espressif.svg", language: "ESP32" },
   { icon: "firebase.svg", language: "Firebase" },
-  { icon: "MUI.svg", language: "Material UI" },
+  { icon: "git.svg", language: "Git" },
+  { icon: "github.svg", language: "GitHub" },
   { icon: "vercel.svg", language: "Vercel" },
-  { icon: "SweetAlert.svg", language: "SweetAlert2" },
+  { icon: "tailwind.svg", language: "Tailwind CSS" },
+  { icon: "nodejs.svg", language: "Node JS" },
+  { icon: "aws.svg", language: "AWS" },
+  { icon: "typescript.svg", language: "TypeScript" },
 ];
 
 export default function FullWidthTabs() {
@@ -197,13 +206,13 @@ export default function FullWidthTabs() {
 
   // Sisa dari komponen (return statement) tidak ada perubahan
   return (
-    <div className="md:px-[10%] px-[5%] w-full sm:mt-0 mt-[3rem] bg-[#030014] overflow-hidden" id="Portofolio">
+    <div className="md:px-[10%] px-[5%] w-full sm:mt-0 mt-[3rem] bg-[var(--page)] overflow-hidden" id="Portofolio">
       {/* Header section - unchanged */}
       <div className="text-center pb-10" data-aos="fade-up" data-aos-duration="1000">
-        <h2 className="inline-block text-3xl md:text-5xl font-bold text-center mx-auto text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]">
+        <h2 className="inline-block text-3xl md:text-5xl font-bold text-center mx-auto text-transparent bg-clip-text bg-gradient-to-r from-[var(--ink-soft)] to-[var(--ink)]">
           <span style={{
-            color: '#6366f1',
-            backgroundImage: 'linear-gradient(45deg, #6366f1 10%, #a855f7 93%)',
+            color: 'var(--ink-soft)',
+            backgroundImage: 'linear-gradient(45deg, var(--ink-soft) 10%, var(--ink) 93%)',
             WebkitBackgroundClip: 'text',
             backgroundClip: 'text',
             WebkitTextFillColor: 'transparent'
@@ -274,7 +283,7 @@ export default function FullWidthTabs() {
                   background: "linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.2))",
                   boxShadow: "0 4px 15px -3px rgba(139, 92, 246, 0.2)",
                   "& .lucide": {
-                    color: "#a78bfa",
+                    color: "var(--ink-soft)",
                   },
                 },
               },

@@ -4,7 +4,15 @@
   <!-- Basic -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/jpeg" href="/Photo.jpeg" />
+  <link rel="icon" type="image/jpeg" href="/Photo1.jpeg" />
+  <script>
+    (function () {
+      var t;
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      if (!t) t = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
   <!-- preload Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -64,7 +72,7 @@
     "@type": "Person",
     "name": "Faza Syaquille Suny",
     "url": "https://fazaporto.netlify.app",
-    "image": "https://fazaporto.netlify.app/Photo.jpeg",
+    "image": "https://fazaporto.netlify.app/Photo1.jpeg",
     "jobTitle": "Cloud Engineering | Machine Learning | Web Development",
     "description": "Electrical Engineering graduate building practical systems across cloud infrastructure, machine learning, and web development.",
     "sameAs": [

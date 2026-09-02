@@ -27,9 +27,9 @@ export default function Dashboard() {
       {/* Logo */}
       <div className="flex items-center gap-3 px-1 shrink-0">
         <div className="relative">
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-xl blur opacity-50" />
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-[#d4d4d8] to-[#fafafa] rounded-xl blur opacity-50" />
           <div className="relative w-9 h-9 bg-[#030014] rounded-xl border border-white/15 flex items-center justify-center">
-            <LayoutDashboard className="w-4 h-4 text-indigo-400" />
+            <LayoutDashboard className="w-4 h-4 text-gray-300" />
           </div>
         </div>
         <div>
@@ -39,9 +39,9 @@ export default function Dashboard() {
       </div>
 
       {/* Badge */}
-      <div className="shrink-0 px-3 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 flex items-center gap-2">
-        <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" />
-        <span className="text-indigo-300 text-xs font-medium">Portfolio Manager</span>
+      <div className="shrink-0 px-3 py-2 rounded-full bg-gray-400/10 border border-gray-400/20 flex items-center gap-2">
+        <span className="w-1.5 h-1.5 rounded-full bg-gray-300 animate-pulse" />
+        <span className="text-gray-300 text-xs font-medium">Portfolio Manager</span>
       </div>
 
       {/* Nav */}
@@ -56,13 +56,13 @@ export default function Dashboard() {
               onClick={() => setSidebarOpen(false)}
               className={`flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all duration-200 text-sm font-medium shrink-0 ${
                 active
-                  ? 'bg-gradient-to-r from-indigo-500/20 to-purple-500/15 border border-indigo-500/30 text-white'
+                  ? 'bg-gradient-to-r from-gray-400/20 to-gray-400/15 border border-gray-400/30 text-white'
                   : 'text-gray-400 hover:text-gray-200 hover:bg-white/5 border border-transparent'
               }`}
             >
-              <Icon className={`w-4 h-4 shrink-0 ${active ? 'text-indigo-400' : ''}`} />
+              <Icon className={`w-4 h-4 shrink-0 ${active ? 'text-gray-300' : ''}`} />
               {label}
-              {active && <span className="ml-auto w-1.5 h-1.5 rounded-full bg-indigo-400" />}
+              {active && <span className="ml-auto w-1.5 h-1.5 rounded-full bg-gray-300" />}
             </Link>
           )
         })}
@@ -71,7 +71,7 @@ export default function Dashboard() {
       {/* Logout */}
       <button
         onClick={handleLogout}
-        className="shrink-0 flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-500 hover:text-red-400 hover:bg-red-500/5 border border-transparent hover:border-red-500/15 transition-all duration-200 text-sm"
+        className="shrink-0 flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-500 hover:text-gray-300 hover:bg-gray-400/5 border border-transparent hover:border-gray-400/15 transition-all duration-200 text-sm"
       >
         <LogOut className="w-4 h-4 shrink-0" />
         Sign Out
