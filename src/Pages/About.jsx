@@ -1,5 +1,5 @@
 import React, { useEffect, useState, memo, useMemo } from "react"
-import { FileText, Code, Award, Globe, ArrowUpRight, Sparkles, UserCheck } from "lucide-react"
+import { Code, Award, ArrowUpRight, Sparkles } from "lucide-react"
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
@@ -50,7 +50,7 @@ const ProfileImage = memo(() => (
           <div className="absolute inset-0 bg-gradient-to-t from-purple-500/20 via-transparent to-blue-500/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 hidden sm:block" />
           
           <img
-            src="/Photo.jpg"
+            src="/Photo.jpeg"
             alt="Profile"
             className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
             loading="lazy"
@@ -117,23 +117,16 @@ const AboutPage = () => {
   const [stats, setStats] = useState({
     totalProjects: 0,
     totalCertificates: 0,
-    YearExperience: 0,
   });
 
   useEffect(() => {
     const updateStats = () => {
       const storedProjects = JSON.parse(localStorage.getItem("projects") || "[]");
       const storedCertificates = JSON.parse(localStorage.getItem("certificates") || "[]");
-      
-      const startDate = new Date("2021-11-06");
-      const today = new Date();
-      const experience = today.getFullYear() - startDate.getFullYear() -
-        (today < new Date(today.getFullYear(), startDate.getMonth(), startDate.getDate()) ? 1 : 0);
 
       setStats({
         totalProjects: storedProjects.length,
         totalCertificates: storedCertificates.length,
-        YearExperience: experience
       });
     };
 
@@ -148,7 +141,7 @@ const AboutPage = () => {
     };
   }, []);
 
-  const { totalProjects, totalCertificates, YearExperience } = stats;
+  const { totalProjects, totalCertificates } = stats;
 
   // Optimized AOS initialization
   useEffect(() => {
@@ -181,7 +174,7 @@ const AboutPage = () => {
       color: "from-[#6366f1] to-[#a855f7]",
       value: totalProjects,
       label: "Total Projects",
-      description: "Innovative web solutions crafted",
+      description: "Practical systems built",
       animation: "fade-right",
     },
     {
@@ -189,18 +182,10 @@ const AboutPage = () => {
       color: "from-[#a855f7] to-[#6366f1]",
       value: totalCertificates,
       label: "Certificates",
-      description: "Professional skills validated",
+      description: "Skills validated",
       animation: "fade-up",
     },
-    {
-      icon: Globe,
-      color: "from-[#6366f1] to-[#a855f7]",
-      value: YearExperience,
-      label: "Years of Experience",
-      description: "Continuous learning journey",
-      animation: "fade-left",
-    },
-  ], [totalProjects, totalCertificates, YearExperience]);
+  ], [totalProjects, totalCertificates]);
 
   return (
     <div
@@ -229,7 +214,7 @@ const AboutPage = () => {
                 data-aos-duration="1300"
                 itemProp="name"
               >
-                Eki Zulfar Rachman
+                Faza Syaquille Suny
               </span>
             </h2>
             
@@ -238,11 +223,10 @@ const AboutPage = () => {
               data-aos="fade-right"
               data-aos-duration="1500"
             >
-        Saya adalah mahasiswa Teknik Informatika yang berfokus pada pengembangan Front-End. 
-Saya berfokus pada penciptaan pengalaman digital yang menarik dan selalu berupaya memberikan solusi terbaik dalam setiap proyek yang saya kerjakan.
+        Electrical Engineering graduate with hands-on experience building monitoring systems, web applications, IoT solutions, and cloud-based systems. Interested in Cloud Engineering, Machine Learning, and Web Development, with additional experience in IT support, networking, and technical troubleshooting.
                   </p>
 
-               {/* Quote Section */}
+                   {/* Quote Section */}
       <div 
         className="relative bg-gradient-to-br from-[#6366f1]/5 via-transparent to-[#a855f7]/5 border border-gradient-to-r border-[#6366f1]/30 rounded-2xl p-4 my-6 backdrop-blur-md shadow-2xl overflow-hidden"
         data-aos="fade-up"
@@ -260,20 +244,11 @@ Saya berfokus pada penciptaan pengalaman digital yang menarik dan selalu berupay
         </div>
         
         <blockquote className="text-gray-300 text-center lg:text-left italic font-medium text-sm relative z-10 pl-6">
-          "Leveraging AI as a professional tool, not a replacement."
+          Building practical systems at the intersection of cloud infrastructure, machine learning, and web development.
         </blockquote>
       </div>
 
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-4 lg:px-0 w-full">
-              <a href="https://drive.google.com/drive/folders/1BOm51Grsabb3zj6Xk27K-iRwI1zITcpo" className="w-full lg:w-auto">
-              <button 
-                data-aos="fade-up"
-                data-aos-duration="800"
-                className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-white font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 shadow-lg hover:shadow-xl "
-              >
-                <FileText className="w-4 h-4 sm:w-5 sm:h-5" /> Download CV
-              </button>
-              </a>
               <a href="#Portofolio" className="w-full lg:w-auto">
               <button 
                 data-aos="fade-up"
@@ -290,7 +265,7 @@ Saya berfokus pada penciptaan pengalaman digital yang menarik dan selalu berupay
         </div>
 
         <a href="#Portofolio">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 cursor-pointer">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16 cursor-pointer">
             {statsData.map((stat) => (
               <StatCard key={stat.label} {...stat} />
             ))}
